@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.wrap {
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-left: 200px;
+			margin-top: 80px;
+			width: 1002px;
+			border: 1px solid grey;
+			box-sizing: border-box;
+		}
+		.list {
+			margin-top: 10px;
+			width: 980px;
+			height: 90px;
+			line-height: 90px;
+			border: 1px solid blue;
+			font-size: 40px;
+			text-align: center;
+			background: yellowgreen;
+		}
+		.maindash { 
+			position: absolute; 
+			width: 980px; 
+/*			height: 80px; */
+/*			line-height: 78px;*/
+			border: 1px dashed blue; 
+			text-align: center;
+			font-size: 52px;
+			background: #ececec; 
+			opacity: 0.7;
+			cursor: move;
+		}
+		
+		.take_place { 
+			margin-top: 16px;
+			margin-bottom: 16px;
+			position: static; 
+			width: 980px; 
+			height: 30px; 
+			background: hotpink;
+		};
+	</style>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(function (){
+			var range = {x: 0, y: 0};
+			var theDivHeight;
+			var theDivHalf;
+			var move = false;
+			
+			$(".list").each(function (){
+				
+				$(this).mousedown(function (ev){
+					
+					var _this = $(this);
+					range.x = ev.pageX - _this.offset().left;
+					range.y = ev.pageY - _this.offset().top;
+					
+					
+					 theDivHeight = _this.height();
+					
+           theDivHalf = theDivHeight/2;
+					
+            move = true;
+           
+            _this.attr("class","maindash");
+            // 创建新元素 插入拖拽元素之前的位置(虚线框)
+            $("<div class='take_place'></div>").insertBefore(_this);
+					
+				})
+			})
+			
+			$(document).mousemove(function (ev){
+				if (!move) return false;
+				
+				
+			})
+			
+			
+			
+			
+		})
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="list">1</div>
+		<div class="list">2</div>
+		<div class="list">3</div>
+		<div class="list">4</div>
+		<div class="list">5</div>
+		<div class="list">6</div>
+		<div class="list">7</div>
+		<div class="list">8</div>
+		<div class="list">9</div>
+		<div class="list">10</div>
+		<div class="list">11</div>
+	</div>
+</body>
+</html>
