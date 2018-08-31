@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<script>
+	
+		var str = '<p><strong><br>Rufus</strong><br>Dan, Jenny! Over here! </p><p><strong>Jenny</strong><br>Hey, dad! </p><p><strong>Rufus</strong><br>Hey, hey! You made it. Welcome back! How was your weekend? How was your mom? </p>';
+		
+     var   re = new RegExp(">([^<]+)<");
+     var con =   str.match(re);
+		console.log(con);
+		
+         
+//        while (macher.find())
+//        {
+//            System.out.println(macher.group(1));
+//        }
+ 
+//打印结果：
+//Rufus
+//Dan, Jenny! Over here! 
+//Jenny
+//Hey, dad! 
+//Rufus
+//Hey, hey! You made it. Welcome back! How was your weekend? How was your mom?
+	
+	</script>
+</head>
+<body>
+	11
+</body>
+</html>
